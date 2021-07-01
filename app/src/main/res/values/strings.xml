@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Google Maps</string>
+    <string name="check">Check</string>
+    <string name="your_current_location">Your Current Location</string>
+    <string name="check_location_history">Check Location History</string>
+    <string name="location_history">Location History</string>
+</resources>
