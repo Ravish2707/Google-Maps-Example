@@ -43,26 +43,6 @@ public class LocationHistoryAdapter extends RecyclerView.Adapter<LocationHistory
         holder.mLocationDetails.setText(String.format("Location Added at - %s", entity.getDate()));
         holder.mLatitude.setText(String.format("Latitude: %s", entity.getLatitude()));
         holder.mLongitude.setText(String.format("Longitude: %s", entity.getLongitude()));
-
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                new AlertDialog.Builder(mContext).setTitle("Delete Location History").setMessage("Do You want to delete history?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                mViewModel = new ViewModelProvider((ViewModelStoreOwner) mContext).get(LocationViewModel.class);
-                                mViewModel.delete(entity);
-                            }
-                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                }).show();
-                return false;
-            }
-        });
     }
 
     @Override
